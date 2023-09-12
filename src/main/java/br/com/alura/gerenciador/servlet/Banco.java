@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Banco {
 	
-	private List<Empresa> listaEmpresas = new ArrayList<>();
+	private static List<Empresa> listaEmpresas = new ArrayList<>();
 
 	public void adiciona(Empresa empresa) {
-		this.listaEmpresas.add(empresa);
+		Banco.listaEmpresas.add(empresa);
 	}
 	
 	public List<Empresa> getEmpresas() {
-		return this.listaEmpresas;
+		return Banco.listaEmpresas;
 	}
 
 	@Override
