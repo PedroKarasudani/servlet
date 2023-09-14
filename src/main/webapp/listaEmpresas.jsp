@@ -9,6 +9,9 @@
 <title>Lista Empresas</title>
 </head>
 <body>
+	<c:if test="${not empty empresa}">
+		Empresa ${ empresa } cadastrada com sucesso! <br/>
+	</c:if>
 	Lista Empresas: <br/>
 	<ul>
 		<c:forEach items="${lista}" var="empresa">
