@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
-public class ListaEmpresas {
+public class ListaEmpresas implements Acao {
 
 	public String executa (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		System.out.println("Listando Empresa!");
