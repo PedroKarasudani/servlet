@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.alura.gerenciador.acao.Acao;
 
@@ -20,8 +21,18 @@ public class UnicaEntradaServlet extends HttpServlet {
        
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		    
 			String paramAcao = request.getParameter("acao");
+		
+		
+			HttpSession sessao = request.getSession();
+			boolean usuarioNaoEstaLogando = sessao.getAttribute("usuarioLogado") == null;
+			boolean ehAcaoProtegida = !(paramAcao.equals("Login") || paramAcao.equals("FormLogin")); // inves de colocar as todas as paginas que precisam de login, faz verificacao somente as que nao precisam
+			if(ehAcaoProtegida && usuarioNaoEstaLogando) { 
+				response.sendRedirect("entrada?acao=FormLogin");
+				return;
+			}
+		
+			
 			String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
 			String nome;
 			try {

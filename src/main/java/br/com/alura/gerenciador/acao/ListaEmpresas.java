@@ -14,11 +14,7 @@ import br.com.alura.gerenciador.modelo.Empresa;
 public class ListaEmpresas implements Acao {
 
 	public String executa (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		HttpSession sessao = request.getSession();
-		if(sessao.getAttribute("usuarioLogando") == null) {
-			return "redirect:entrada?acao=FormLogin";
-		}
-		
+				
 		System.out.println("Listando Empresa!");
 		
 		Banco banco = new Banco();
