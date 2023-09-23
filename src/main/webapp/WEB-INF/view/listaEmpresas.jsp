@@ -9,7 +9,10 @@
 <title>Lista Empresas</title>
 </head>
 <body>
-
+	<a href="entrada?acao=Logout">Sair</a>
+	<br>
+	<br>
+	
 	Usuario Logando: ${usuarioLogado.login }
 	
 	<br>
