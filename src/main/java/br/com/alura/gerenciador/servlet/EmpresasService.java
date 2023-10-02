@@ -26,8 +26,9 @@ public class EmpresasService extends HttpServlet {
 		
 		//MODELO XML
 		XStream xstream = new XStream();
+		xstream.alias("empresa", Empresa.class);
 		String xml = xstream.toXML(empresas); 
-
+		
 		response.setContentType("application/xml");
 		response.getWriter().print(xml);
 		
