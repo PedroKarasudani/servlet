@@ -1,3 +1,27 @@
+//// Em outro projeto, importamos os JAR, e selecionamos se queremos o XML ou JSON 
+
+//package br.com.alura.cliente;
+//
+//import org.apache.http.client.fluent.Request;
+//
+//public class ClienteWebService {
+//
+//	public static void main(String[] args) throws Exception {
+//		
+//		String conteudo = Request
+//			.Post("http://localhost:8080/gerenciador/empresas")
+//			.addHeader("Accept", "application/xml")
+//			.execute()
+//			.returnContent()
+//			.asString();
+//
+//		System.out.println(conteudo);
+//		
+//	}
+//
+//}
+
+
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
